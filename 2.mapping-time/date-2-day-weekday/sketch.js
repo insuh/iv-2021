@@ -25,11 +25,12 @@ function draw() {
 
   for (let i = 0; i < now.weekday; i++) {
     rectMode(CORNER);
-    fill(100);
+    fill(33);
     rect( (width/2 - 275) + 80 * i, height/2 - 35, 70, 70);
   }
 
   noFill();
+  stroke(240);
 
   if (now.day > 7) {
     for (let i = 0; i < now.day; i++) {
