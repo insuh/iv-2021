@@ -17,9 +17,9 @@ function draw() {
   now = clock();
 
   if (now.am) {
-    background(255);
+    background(240);
   } else if (now.pm) {
-    background(0);
+    background(33);
   }
 
   // set up typography & drawing-color
@@ -37,50 +37,50 @@ function draw() {
 
 function secondss() {
   if (now.am) {
-    stroke(0);
-    fill(255);
+    stroke(33);
+    fill(240);
   } else if (now.pm) {
-    stroke(255);
-    fill(0);
+    stroke(240);
+    fill(33);
   };
 
   let s = map(now.sec,0,60,0,100);
   ellipse(width/2,height/2,100,100);
 
   noStroke();
-  fill (255,51,51);
+  fill (209,44,44);
   ellipse(width/2,height/2,s,s);
 }
 
 function minutess() {
   if (now.am) {
-    stroke(0);
-    fill(255);
+    stroke(33);
+    fill(240);
   } else if (now.pm) {
-    stroke(255);
-    fill(0);
+    stroke(240);
+    fill(33);
   };
 
   m = map(now.min,0,60,100,200);
   ellipse(width/2,height/2,200,200);
 
   noStroke();
-  fill (153,51,255);
+  fill (126,57,163);
   ellipse(width/2,height/2,m,m);
 }
 
 function hourss() {
   if (now.am) {
-    stroke(0);
-    fill(255);
+    stroke(33);
+    fill(240);
   } else if (now.pm) {
-    stroke(255);
-    fill(0);
+    stroke(240);
+    fill(33);
   };
   h = map(now.hour,1,12,201,300);
   ellipse(width/2,height/2,300,300);
 
   noStroke();
-  fill (51,153,255);
+  fill (57,124,158);
   ellipse(width/2,height/2,h,h);
 }

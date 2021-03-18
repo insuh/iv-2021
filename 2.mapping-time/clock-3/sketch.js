@@ -5,6 +5,11 @@ let now;
 let scounter = 0;
 let mcounter = 0;
 let hcounter = 0;
+let secBall = 0;
+let minBall = 0;
+let hourBall = 0;
+
+let timeFill = 0;
 
 function setup() {
   // set the width & height of the sketch
@@ -18,7 +23,21 @@ function setup() {
 
 function draw() {
   now = clock();
-  background("rgba(0,0,0,0.01)");
+
+  if (now.am) {
+    background(240);
+    timeFill = color(240);
+  } else if (now.pm) {
+    background(33);
+    timeFill = color(33);
+  }
+
+  stroke(209,44,44); //sec
+  line(width/2-100,height/2-200,width/2-100,height/2+200);
+  stroke(126,57,163); //min
+  line(width/2,height/2-200,width/2,height/2+200);
+  stroke(57,124,158); //hour
+  line(width/2+100,height/2-200,width/2+100,height/2+200);
 
   // set up typography & drawing-color
   // textFont("Anonymous Pro") // ← check index.html to see how it was loaded from google-fonts
@@ -30,36 +49,28 @@ function draw() {
   // text(now.text.time, 30, 100)
 
   secondss();
-  
   minutess();
-
   hourss();
 
 }
 
 function secondss() {
-  scounter += 0.05;
-  let y = sin(scounter) * 60 + height/2;
-  let x = cos(scounter) * 60 + width/2;
-  noStroke();
-  fill(255,51,51);
-  ellipse(x,y,20,20);
+  secBall = map(now.sec,0,60,50,450);
+  stroke(209,44,44);
+  fill(timeFill);
+  ellipse(width/2-100,secBall,15,15);
 }
 
 function minutess() {
-  mcounter += 0.01;
-  let y = sin(mcounter) * 100 + height/2;
-  let x = cos(mcounter) * 100 + width/2;
-  noStroke();
-  fill(153,51,255);
-  ellipse(x,y,20,20);
+  minBall = map(now.min,0,60,50,450);
+  stroke(126,57,163);
+  fill(timeFill);
+  ellipse(width/2,minBall,15,15);
 }
 
 function hourss() {
-  hcounter += 0.005;
-  let y = sin(hcounter) * 140 + height/2;
-  let x = cos(hcounter) * 140 + width/2;
-  noStroke();
-  fill(51,153,255);
-  ellipse(x,y,20,20);
+  hourBall = map(now.hour,1,12,50,450);
+  stroke(57,124,158);
+  fill(timeFill);
+  ellipse(width/2+100,hourBall,15,15);
 }

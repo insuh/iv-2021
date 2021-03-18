@@ -17,9 +17,9 @@ function draw() {
   now = clock();
 
   if (now.am) {
-    background(255);
+    background(240);
   } else if (now.pm) {
-    background(0);
+    background(33);
   };
 
   // set up typography & drawing-color
@@ -34,9 +34,9 @@ function draw() {
   secondss();
   hourminutess();
   if (now.am) {
-    stroke(0);
+    stroke(33);
   } else if (now.pm) {
-    stroke(255);
+    stroke(240);
   };
 
   noFill();
@@ -51,14 +51,19 @@ function draw() {
 
 function secondss() {
   noStroke();
-  fill(255,51,51);
+  fill (209,44,44);
   s = map(now.sec,0,60,0,600);
   rect(100,height/2+100,s,20);
 }
 
 function hourminutess() {
-  fill(153,51,255);
+  fill (126,57,163);
+  for (i=0; i<now.hour; i++) {
+    rect(100,height/2-100,i*50,200);
+  }
+
   m = map(now.min,0,60,0,200);
   h = map(now.hour,1,12,50,600);
-  rect(100,height/2 - (m/2),h,m);
+  // rect(100,height/2 - (m/2),h,m);
+  rect(100,(height/2) + 100,h,m * -1);
 }
