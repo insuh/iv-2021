@@ -16,7 +16,7 @@ function draw() {
   background(240);
 
   fill(240);
-  stroke(33);
+  stroke(209,44,44);
 
   for (let i = 0; i < 7; i++) {
     rectMode(CENTER);
@@ -30,7 +30,7 @@ function draw() {
   }
 
   noFill();
-  stroke(240);
+  stroke(209,44,44);
 
   if (now.day > 7) {
     for (let i = 0; i < now.day; i++) {
