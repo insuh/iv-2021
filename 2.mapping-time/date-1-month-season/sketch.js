@@ -14,7 +14,7 @@ function setup() {
   // print the time to the console once at the beginning of the run. try opening up the
   // web inspector and poking around to see the various values the clock function gives you
   print('starting time:', clock())
-  
+
 }
 
 function draw() {
@@ -52,25 +52,25 @@ function draw() {
 
   rectMode(CORNER);
   fill(spring);
-  rect(width/2 - 140, height/2 - 120, 120, 120, 90, 0, 0, 0);
+  rect(width / 2 - 140, height / 2 - 120, 120, 120, 90, 0, 0, 0);
   fill(summer);
-  rect(width/2 - 140, height/2, 120, 120, 0, 0, 0, 90);
+  rect(width / 2 - 140, height / 2, 120, 120, 0, 0, 0, 90);
   fill(fall);
-  rect(width/2 + 20, height/2, 120, 120, 0, 0, 90, 0);
+  rect(width / 2 + 20, height / 2, 120, 120, 0, 0, 90, 0);
   fill(winter);
-  rect(width/2 + 20, height/2 - 120, 120, 120, 0, 90, 0, 0);
+  rect(width / 2 + 20, height / 2 - 120, 120, 120, 0, 90, 0, 0);
 
   fill(240);
 
   for (let i = 0; i < 12; i++) {
     rectMode(CENTER);
-    rect(width/2, (height/2) - 20 * i + (20 * 5.5), 20, 20);
+    rect(width / 2, (height / 2) - 20 * i + (20 * 5.5), 20, 20);
   }
 
   for (let i = 0; i < now.month; i++) {
     rectMode(CORNER);
     fill(33);
-    rect(width/2 - 10, (height/2 - 120) + 20 * i, 20, 20);
+    rect(width / 2 - 10, (height / 2 - 120) + 20 * i, 20, 20);
   }
 
 }
